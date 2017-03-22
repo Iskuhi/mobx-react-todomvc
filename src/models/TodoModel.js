@@ -1,4 +1,4 @@
-import {observable} from 'mobx';
+import {observable, computed} from 'mobx';
 
 export default class TodoModel {
 	store;
@@ -13,17 +13,6 @@ export default class TodoModel {
 		this.completed = completed;
 	}
 
-	toggle() {
-		this.completed = !this.completed;
-	}
-
-	destroy() {
-		this.store.todos.remove(this);
-	}
-
-	setTitle(title) {
-		this.title = title;
-	}
 
 	toJS() {
 		return {
